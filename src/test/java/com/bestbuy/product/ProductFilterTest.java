@@ -12,11 +12,11 @@ import java.util.Map;
 
 /**
  * Validates the ProductFilter class.
- * verifies empty item lists, partial actives, and full actives
+ * verifies empty item lists, partial active, and full active
  */
 public class ProductFilterTest {
 
-    @Disabled("becaus it was failling the build - John D.")
+    //@Disabled("because it was failing the build - John D.")
     @Test
     public void test1(){
         List<Item> emptyList = new ArrayList<>();
@@ -27,7 +27,7 @@ public class ProductFilterTest {
         Assertions.assertTrue(activeKeys.isEmpty());
     }
 
-    @Disabled("becaus it was failling the build - John D.")
+   // @Disabled("because it was failing the build - John D.")
     @Test
     public void test2() {
         List<Item> emptyList = new ArrayList<>();
@@ -48,7 +48,7 @@ public class ProductFilterTest {
 
     }
 
-    @Disabled("becaus it was failling the build - John D.")
+    //@Disabled("becaus it was failing the build - John D.")
     @Test
     public void test3() {
         List<Item> inactive = new ArrayList<>();
@@ -141,7 +141,7 @@ public class ProductFilterTest {
 
     }
 
-    @Disabled("Jira Ticket SDET-275891 - John D.")
+    //@Disabled("Jira Ticket SDET-275891 - John D.")
     @Test
     public void test6() {
         List<Item> inactive = new ArrayList<>();
@@ -161,7 +161,7 @@ public class ProductFilterTest {
         Map<String, Boolean> rj4d = new HashMap<>();
         rj4d.put("A", false);
         rj4d.put("B", true);
-        inactiveItem.setKeys(rj4d);
+        inactiveItem2.setKeys(rj4d);
         inactive.add(inactiveItem2);
 
 

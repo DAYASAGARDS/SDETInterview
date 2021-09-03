@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-//Filters Itesm so that we can identify if the the item has any active keys.
+//Filters Item so that we can identify if the the item has any active keys.
 public class ProductFilter {
 
     /*
@@ -19,11 +19,15 @@ public class ProductFilter {
      */
     public Map<Long, String> identifyActiveKeys(List<Item> keys)
     {
-        List active = new ArrayList<Item>();
+        List<Item> active = new ArrayList<Item>();
+       
+       // if(keys.size()!=0);
 
-        Iterator iter = keys.iterator();
+        Iterator<Item> iter = keys.iterator();
         do
         {
+        	
+        	if(iter.hasNext()) {
             Item next = (Item) iter.next();
             if(next != null)
             {
@@ -39,17 +43,21 @@ public class ProductFilter {
                     }
                 }
             }
+        	}
         }
         while (iter.hasNext());
 
-        Map activeKeyIds = new HashMap<Long, String>();
-        Iterator iter2 = active.iterator();
+        Map<Long, String> activeKeyIds = new HashMap<Long, String>();
+        Iterator<Item> iter2 = active.iterator();
 
+        if(iter2.hasNext()) {
         do
         {
             Item activeItem = (Item) iter2.next();
             activeKeyIds.put( activeItem.id, activeItem.value);
-        } while (iter.hasNext());
+        } while (iter2.hasNext());
+        }
         return activeKeyIds;
     }
+        
 }
